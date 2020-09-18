@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Tracking</title>
+
+</head>
+<body bgcolor="cyan">
+<table bgcolor="grey" width=100%>
+    <td>
+        <center>
+
+            <h1> Time Tracking Application.</h1>
+        </center>
+    </td>
+</table>
+
+<!--        <label> <a href="app2/signup"><b>SIGNUP</b></a> </label>-->
+
+
+<br>
+ {% if temp  %}
+    <h2> Fill the following details.</h2>
+    <h3 ><a href="/"><b>back</b></a> </h3><br>
+    <form action="contact12" method="post" onsubmit="return checkblank()">
+        {% csrf_token %}
+            <label > Select Project:</label>
+            <select name="project"  id="select"  >
+                <option ></option>
+                <option>Project 1</option>
+                <option>Project 2</option>
+                <option>Project 3</option>
+                <option></option>
+            </select><br><br>
+            Enter Task&nbsp;&nbsp;:<input id="task" type="text" name="task">
+            <button type="submit" id="mybtn" value="click">Submit</button><br>
+    </form><br>
+{% endif %}
+
+{% if not temp %}
+<h2> Please start the task ....</h2>
+    <button onclick="location.href='{% url 'on' %}'" > Start Time</button> <br><br>
+{% endif %}
+Start Time :{{start_time}}<br>
+
+<script>
+    function checkblank(){
+    if(document.getElementById('task').value=="") {
+        alert('Please enter the task name');
+        return false;
+        }
+    if(document.getElementById('select').value=="") {
+        alert('Please Select the Project');
+        return false;
+        }
+    }
+
+</script>
+
+</body>
+</html>

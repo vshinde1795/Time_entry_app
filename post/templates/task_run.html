@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<body bgcolor="cyan">
+<table bgcolor="grey" width=100%>
+    <td>
+        <center>
+
+            <h1> Time Tracking Application .</h1>
+        </center>
+    </td>
+</table>
+{% if lock %}
+<h2> Task is running...</h2>
+    <button  onclick="location.href='{% url 'off' %}'">Stop Time</button> <br>
+{% endif %}
+<h2> Task is Complited.</h2>
+<h3> Thank you for using this app.</h3>
+Start Time :{{start_time}}<br>
+Total Time :{{total}} <br>
+
+ {% if not lock  %}
+    <h2><a href="details">Database</a></h2>
+{% if user.is_authenticated %}
+<label><h2> <a href="/app4/logout/"><b>Logout</b></a></h2> </label>
+{% endif %}
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+
+<body bgcolor="cyan">
+<table bgcolor="grey" width=100%>
+    <td>
+        <center>
+
+            <h1> Time Tracking Application Database.</h1>
+        </center>
+    </td>
+</table>
+{% if user.is_authenticated %}
+<label><h2> <a href="/app4/logout/"><b>Logout</b></a></h2> </label>
+{% endif %}
+<center>
+    <table  border="solid 4px" bgcolor="cyan" width=70%>
+        <tr>
+            <th>Task</th>
+            <th>Project</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+            <th>Total Time</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.task}}</td>
+            <td>{{i.project}}</td>
+            <td>{{i.Date}}</td>
+            <td>{{i.start_time}}</td>
+            <td>{{i.stop_time}}</td>
+            <td>{{i.total_time}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
