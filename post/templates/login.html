@@ -9,33 +9,18 @@
 <table bgcolor="grey" width=100%>
     <td>
         <center>
-
             <h1> Time Tracking Application.</h1>
         </center>
     </td>
 </table>
 <label><h1> Login to the Time Tracking </h1></label>
 <h2><a href="/">back</a> </h2>
-<p>
-    <form action="login" method="post">
+<form action="login" method="post">
         {%csrf_token%}
-        <br><br>
-        Enter Username:<input type="text" id="uname" placeholder="abc123" name="username"><br><br>
-        Enter Password:<input type="password" id="password" placeholder="password"name="password"><br><br>
+        <br>
+        Enter Username:<input type="text" id="uname" placeholder="abc123" name="username" required><br><br>
+        Enter Password:<input type="password" id="password" placeholder="password"name="password" required><br><br>
         <input type="submit"><br>
-    </form>
-</p>
-<!--<script>-->
-<!--    function checkblank(){-->
-<!--    if(document.getElementById('uname').value=="") {-->
-<!--        alert('Please enter your user name');-->
-<!--        return false;-->
-<!--        }-->
-<!--    if(document.getElementById('password').value=="") {-->
-<!--        alert('Please enter your first name');-->
-<!--        return false;-->
-<!--        }-->
-<!--</script>-->
-
+</form>
 </body>
 </html>

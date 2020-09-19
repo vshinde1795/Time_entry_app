@@ -1,7 +1,8 @@
 import pyautogui as pu
 from django.shortcuts import render,redirect
 from django.contrib import auth
-# Create your views here.
+
+
 def login(request):
     if request.method == 'POST':
         username1 = request.POST['username']
