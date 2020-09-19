@@ -9,7 +9,6 @@
 <table bgcolor="grey" width=100%>
     <td>
         <center>
-
             <h1> Time Tracking Application .</h1>
         </center>
     </td>
@@ -17,6 +16,7 @@
 {% if lock %}
 <h2> Task is running...</h2>
     <button  onclick="location.href='{% url 'off' %}'">Stop Time</button> <br>
+Start Time :{{start_time}}<br>
 {% endif %}
 
  {% if not lock  %}
@@ -27,7 +27,7 @@
 <label><h2> <a href="/app4/logout/"><b>Logout</b></a></h2> </label>
 {% endif %}
 {% endif %}
-Start Time :{{start_time}}<br>
+
 Total Time :{{total}} <br>
 </body>
 </html>
